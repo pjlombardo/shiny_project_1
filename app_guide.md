@@ -7,7 +7,7 @@ This serves as a quick reference for the Shiny App. This app will use the `iris`
 ### Layout description
 Header going across the top, a small column for the control elements (slider and checkbox), the rest is given to the main plot in that row.  Below the main plot we have our summary table.
 
-![My Layout](my_layout.png)
+![My Layout](my_layout.png){width=50%}
 
 ### Inputs
 The bullets below take the general form:
