@@ -11,6 +11,18 @@ server <- function(input, output){
   # you will put your interactions here
   
   
+  
+  # placeholder plot
+  output$scatterplot <- renderPlot(
+    hist(iris$Sepal.Length)
+  )
+  
+  # placehold table
+  output$my_summaries <- renderTable(
+    iris %>%
+      group_by(Species) %>%
+      summarise(sample_size = n())
+  )
 
   
 }

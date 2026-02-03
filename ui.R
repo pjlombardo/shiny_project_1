@@ -16,15 +16,15 @@ ui <- fluidPage(
   ),
   
   column(8,
-    p("main plot")
+    plotOutput("scatterplot")
   ),
   
   column(4, 
-    p("spacer")
+    
   ),
   
   column(8,
-    p("summary table")
+    tableOutput("my_summaries")
   )
   
 )

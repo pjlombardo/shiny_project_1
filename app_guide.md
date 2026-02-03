@@ -22,7 +22,8 @@ The bullets below take the general form:
 
 > Shiny Component  |  **variable_name**  | (inputs required)  | optional: function used
 
-* fill in...
+* plotOutput | **scatterplot** | ... | ...
+* tableOutput | **my_summaries** | ... | ...
 
 ### Reactive components and Server
 
