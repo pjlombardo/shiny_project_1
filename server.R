@@ -3,6 +3,7 @@
 
 library(shiny)
 library(tidyverse)
+library(kableExtra)
 
 source('functions.R')
 
@@ -10,19 +11,23 @@ source('functions.R')
 server <- function(input, output){
   # you will put your interactions here
   
+  # we want a dataframe df to be reactive (responsive)
+  # to the input of min_petal_width.
+  df <- reactiveValues(data = iris)
   
+  observeEvent(input$min_petal_width, {
+    df$data <- iris %>% filter(Petal.Width > input$min_petal_width)
+  })
   
   # placeholder plot
   output$scatterplot <- renderPlot(
-    hist(iris$Sepal.Length)
+    create_plot(df$data, input$show_color)
   )
   
   # placehold table
-  output$my_summaries <- renderTable(
-    iris %>%
-      group_by(Species) %>%
-      summarise(sample_size = n())
-  )
+  output$my_summaries <- function(){
+    create_table(df$data)
+  }
 
   
 }

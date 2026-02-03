@@ -22,16 +22,18 @@ The bullets below take the general form:
 
 > Shiny Component  |  **variable_name**  | (inputs required)  | optional: function used
 
-* plotOutput | **scatterplot** | ... | ...
-* tableOutput | **my_summaries** | ... | ...
+* plotOutput | **scatterplot** | (df$data, input$show_color)  | create_plot()
+* tableOutput | **my_summaries** | (df$data) | create_table()
 
 ### Reactive components and Server
 
 > component type | **variable_name(s)** | Events that trigger 
 
-* fill in...
+* reactiveValues | **df$data** | input$min_petal_width
 
 
 ### Functions and Set up
 
-> **function_name**  |  (inputs)  | purpose
+> **create_plot()**  |  (df, show_color)  | This creates a ggplot that uses `show_color` to toggle color-by-species on and off, and builds from a passed data frame `df`.
+
+> **create_table()** | (df) | Creates a nice kable-table from the passed data frame `df`
