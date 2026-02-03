@@ -9,10 +9,12 @@ ui <- fluidPage(
   p("This is a shiny app showing a scatter plot of Sepal Width by Petal Width, and sharing the means of each variable broken up by Species."),
   
   column(4,
-    sliderInput("min_petal_width", 
+    inputPanel(
+      sliderInput("min_petal_width", 
                 "Select the smallest Petal Width to appear in the data.",
                 min = .09, max = 2.6, step = .01, value = .09),
     checkboxInput("show_color","Color Plot By Species?", value = FALSE)
+    )
   ),
   
   column(8,
